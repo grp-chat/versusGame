@@ -501,7 +501,7 @@ function createNewRow(rowNum, userName, userId) {
     }
     divCol1c.addEventListener('click', function () {
         sock.emit('challenge', userId);
-        divCol1b.disabled = true;
+        divCol1c.disabled = true;
     });
 
     var divCol3 = divRow.appendChild(document.createElement('div'));
