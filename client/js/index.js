@@ -333,14 +333,14 @@ sock.on('transmituser', data => {
 
 sock.on('userdisconnect', data => {
     userOffline = data;
-    if (userOffline === "Aum") {
+    /* if (userOffline === "Aum") {
         var togSpan = document.getElementById('AAspan');
         togSpan.style.background = "red";
     };
     if (userOffline === "Nina") {
         var togSpan = document.getElementById('NNspan');
         togSpan.style.background = "red";
-    };
+    }; */
     if (userOffline === "LK") {
         var togSpan = document.getElementById('LKspan');
         togSpan.style.background = "red";
