@@ -95,6 +95,8 @@ sock.emit('newuser', nickname);
 
 //++++++++++++++++++++++++++++++++++++++++ DOCUMENT OBJECT METHOD UPDATE +++++++++++++++++++++++++++++++++++
 
+var theRound = document.getElementById("h1");
+theRound.innerHTML = "VS Mode - Round" + roundNum;
 document.body.appendChild(createContainerFluid());
 
 let mainDiv = document.getElementById("maindiv");
@@ -402,6 +404,7 @@ sock.on('sendchallenge', data => {
 
 sock.on('refreshall', data => {
     roundNum = data;
+    theRound.innerHTML = "VS Mode - Round" + roundNum;
     var refreshIt = document.getElementById(nickname + "submitbtn");
     refreshIt.disabled = false;
     var refreshIt2 = document.getElementById(nickname + "callcha");
@@ -548,11 +551,11 @@ function createButtonGroup(name, elToApply, userId) {
     let btn1 = createDiv.appendChild(document.createElement('button'));
     btn1.setAttribute("id", "btn1")
     btn1.className = "btn btn-success"
-    btn1.innerHTML = "+Win"
+    btn1.innerHTML = "+"
     let btn2 = createDiv.appendChild(document.createElement('button'));
     btn2.setAttribute("id", "btn2")
     btn2.className = "btn btn-dark"
-    btn2.innerHTML = "-Win"
+    btn2.innerHTML = "-"
 
     btn1.addEventListener('click', function () {
         sock.emit('addWin', userId);
@@ -578,12 +581,12 @@ function createChaButtons(userId) {
     let chaBtn1 = createDiv.appendChild(document.createElement('button'));
     chaBtn1.setAttribute("id", userId + "chabtn1");
     chaBtn1.className = "btn btn-success";
-    chaBtn1.innerHTML = "+Challenge";
+    chaBtn1.innerHTML = "+C";
     //chaBtn1.disabled = "true";
     let chaBtn2 = createDiv.appendChild(document.createElement('button'));
     chaBtn2.setAttribute("id", userId + "chabtn2");
     chaBtn2.className = "btn btn-dark";
-    chaBtn2.innerHTML = "-Challenge";
+    chaBtn2.innerHTML = "-C";
 
     chaBtn1.addEventListener('click', function () {
         sock.emit('addCha', userId);
