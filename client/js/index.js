@@ -404,6 +404,8 @@ sock.on('refreshall', data => {
     roundNum = data;
     var refreshIt = document.getElementById(nickname + "submitbtn");
     refreshIt.disabled = false;
+    var refreshIt2 = document.getElementById(nickname + "callcha");
+    refreshIt2.disabled = false;
     var clearIt = document.getElementById("LKinput");
     clearIt.value = '';
     clearIt = document.getElementById("LXRinput");
@@ -499,6 +501,7 @@ function createNewRow(rowNum, userName, userId) {
     }
     divCol1c.addEventListener('click', function () {
         sock.emit('challenge', userId);
+        divCol1b.disabled = true;
     });
 
     var divCol3 = divRow.appendChild(document.createElement('div'));
