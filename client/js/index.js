@@ -42,10 +42,10 @@ const promptMsg = () => {
     }
 
 
-    if (nick === '1111') {
+    if (nick === '8111188') {
         nickname = 'Aum';
         correctPin = true;
-    } else if (nick === '8888') {
+    } else if (nick === '1888811') {
         nickname = 'Nina'
         correctPin = true;
     } else if (nick === '9852') {
